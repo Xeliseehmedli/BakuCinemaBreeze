@@ -27,12 +27,14 @@ header{
 }
 .cinema-header-content {
   margin-left: 14px;
+  
 }
 .cinema-header-content ul {
   display: flex;
   list-style: none;
   gap: 24px;
-  margin-top: 2.5%;
+  margin-top: 2.8%;
+  flex-wrap: nowrap;
 }
 .cinema-header-content li {
   font-family: "Inter", sans-serif;
@@ -40,11 +42,12 @@ header{
   font-weight: 600;
   line-height: 100%;
   cursor: pointer;
+  white-space: nowrap;
 }
 .cinema-header-right {
   display: flex;
   gap: 6px;
-  margin-top: 1%;
+  margin-top: 3%;
  
 }
 .global-icon{
@@ -65,7 +68,9 @@ width: 8%;
   font-weight: 600;
   margin-top: 10px;
  border-color:#5ac0cd ;
- margin-left: 6%;
+ left: 6%;
+ top: -11%;
+ position: relative;
 }
 .cinema-header-content li {
   position: relative;
@@ -486,28 +491,28 @@ thead th {
   margin-top: 15%;
 }
 .title{
-  font-size: 120px;
+  font-size: 140px;
   font-weight: lighter;
   font-family: 'Roboto', sans-serif;
 }
 .description {
-  margin-right: 19vw;
+  margin-right: 8vw;
   margin-top: 2%;
   font-family: "Epilogue" ,sans-serif;
   line-height: 30px
 }
 
 .subtitle {
- margin-left: 6vw;
+ margin-left: 6.5vw;
  color: #949494;
- font-size: 23px;
+ font-size: 26px;
  line-height: 23px;
 
 }
 .mekan-content{
 display: flex;
   gap: 50px;
-margin-left: -12vw;
+/* margin-left: -19vw; */
  margin-top: 40px;
  justify-content: center;
  align-items:center ;
@@ -521,17 +526,18 @@ margin-left: -12vw;
 
 .mekan-item.heyder-eliyev-center {
  
-  width: 340px;
+  width: 430px;
 }
 
 .mekan-item.kino-merkezi {
-  width: 450px ;
-  height: 450px;
- 
+  width: 516px ;
+  height: 520px;
+  position: relative;
+
 }
 
 .mekan-item.kino-theatre {
-width: 340px;
+width: 430px;
 margin-left: -150px;
 }
 .mekan-title{

@@ -40,6 +40,7 @@ import linkedin from "./assets/linkedln.svg";
 import facebook from "./assets/facebook.svg";
 import youtube from "./assets/youtube.svg";
 import call from "./assets/call.svg";
+import Countdown from "react-countdown";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -74,14 +75,7 @@ const navItems = [
 ];
 
 function BakuCinema() {
-  const[seconds,setSeconds]=useState('40') 
-  useEffect(()=>{
-    const interval=setInterval(()=>{
- setSeconds((prev)=>(prev>0?prev -1 : 0));
-    },1000);
-    return () => clearInterval(interval);
-   
-  },[]);
+  
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -104,6 +98,18 @@ function BakuCinema() {
 
     return () => observer.disconnect();
   }, []);
+
+const now = new Date();
+const targetDate = new Date(
+  now.getTime() +
+    60 * 24 * 60 * 60 * 1000 + // 60 gün
+    17 * 60 * 60 * 1000 + // 17 saat
+    15 * 60 * 1000 + // 15 dəqiqə
+    40 * 1000 // 40 saniyə
+);
+
+  
+
   return (
     <>
       <header
@@ -138,7 +144,7 @@ function BakuCinema() {
             <img src={Global} className="global-icon" />
             <p className="languages">ENG</p>
             <img src={Vector} className="vector-icon" />
-            <button className="registration-button">Registration</button>
+            <div><button className="registration-button">Registration</button></div>
           </div>
         </div>
       </header>
@@ -164,29 +170,40 @@ function BakuCinema() {
               </div>
             </div>
             <div className="countdown">
-              <div className="countdown-timer">
-                <div className="countdown-background"></div>
-                <div className="time-box">
-                  <p className="time-number">60</p>
-                  <p className="time-label">day</p>
-                </div>
-                <span className="separator">:</span>
-                <div className="time-box">
-                  <p className="time-number">17</p>
-                  <p className="time-label">hour</p>
-                </div>
-                <span className="separator">:</span>
-                <div className="time-box">
-                  <p className="time-number">15</p>
-                  <p className="time-label">min</p>
-                </div>
-                <span className="separator">:</span>
-                <div className="time-box">
-                  <p className="time-number">{seconds.toString().padStart(2, "0")}</p>
-                  <p className="time-label">sec</p>
-                </div>
-              </div>
+  <div className="countdown-timer">
+    <Countdown
+      date={targetDate}
+      renderer={({ days, hours, minutes, seconds, completed }) => {
+        if (completed || days === 0) {
+          return <span className="countdown-ended">Sayğac dayandı!</span>;
+        }
+        return (
+          <>
+            <div className="time-box">
+              <p className="time-number">{days}</p>
+              <p className="time-label">day</p>
             </div>
+            <span className="separator">:</span>
+            <div className="time-box">
+              <p className="time-number">{String(hours).padStart(2, "0")}</p>
+              <p className="time-label">hour</p>
+            </div>
+            <span className="separator">:</span>
+            <div className="time-box">
+              <p className="time-number">{String(minutes).padStart(2, "0")}</p>
+              <p className="time-label">min</p>
+            </div>
+            <span className="separator">:</span>
+            <div className="time-box">
+              <p className="time-number">{String(seconds).padStart(2, "0")}</p>
+              <p className="time-label">sec</p>
+            </div>
+          </>
+        );
+      }}
+    />
+  </div>
+</div>
 
             <div className="image-collage" id="festival">
               <img
@@ -444,7 +461,7 @@ function BakuCinema() {
                       className="event-cell"
                     ></td>
                     <td className="event-cell highlight beige">
-                      {/* Opening Ceremony{" "} */}
+                  
                     </td>
                     <td
                       style={{ backgroundImage: `url(${maskgroup})` }}
