@@ -74,6 +74,14 @@ const navItems = [
 ];
 
 function BakuCinema() {
+  const[seconds,setSeconds]=useState('40') 
+  useEffect(()=>{
+    const interval=setInterval(()=>{
+ setSeconds((prev)=>(prev>0?prev -1 : 0));
+    },1000);
+    return () => clearInterval(interval);
+   
+  },[]);
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
@@ -174,7 +182,7 @@ function BakuCinema() {
                 </div>
                 <span className="separator">:</span>
                 <div className="time-box">
-                  <p className="time-number">40</p>
+                  <p className="time-number">{seconds.toString().padStart(2, "0")}</p>
                   <p className="time-label">sec</p>
                 </div>
               </div>
@@ -215,22 +223,22 @@ function BakuCinema() {
 
           <section id="festival">
             <div className="festival-content">
-              <h1 className="festival-header">Festival</h1>
-              <span className="festival-text">
+             <div><h1 className="festival-header">FESTIVAL</h1></div> 
+              <div><span className="festival-header-text">
                 It has survived not only five centuries, but also the leap into
                 electronic <br /> typesetting.
-              </span>
+              </span></div>
               <div>
                 <div className="icons">
                   <img
                     src={filmfestivali}
-                    style={{ width: "12%", marginTop: "-3%" }}
+                    style={{ width: "13vw", marginTop: "-3%" }}
                   />
-                  <img src={anima} style={{ width: "11%", marginTop: "-3%" }} />
-                  <img src={logo} style={{ width: "11%", marginTop: "-3%" }} />
+                  <img src={anima} style={{ width: "10vw", marginTop: "-3%" }} />
+                  <img src={logo} style={{ width: "11vw", marginTop: "-3%" }} />
                   <img
                     src={mobilfilm}
-                    style={{ width: "9%", marginTop: "-3%" }}
+                    style={{ width: "7vw", marginTop: "-4%" }}
                   />
                 </div>
                 <div className="festival">
@@ -500,10 +508,10 @@ function BakuCinema() {
               <img src={photoShoot4} />
             </div>
           </section>
-          <section id="venues">
+          <section id="venues" >
             <div className="mekan-container">
               <div className="top-row">
-                <h3 className="title">MEKANLAR</h3>
+              <h3 className="title">MEKANLAR</h3> 
                 <span className="description">
                   "Discover exceptional living with our real <br />
                   estate project. Tailored to fit your lifestyle,

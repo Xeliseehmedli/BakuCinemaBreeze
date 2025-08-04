@@ -31,11 +31,11 @@ header{
 .cinema-header-content ul {
   display: flex;
   list-style: none;
-  gap: 34px;
+  gap: 24px;
   margin-top: 2.5%;
 }
 .cinema-header-content li {
-  font-family: "Inter" sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 100%;
@@ -44,7 +44,11 @@ header{
 .cinema-header-right {
   display: flex;
   gap: 6px;
+  margin-top: 1%;
  
+}
+.global-icon{
+width: 8%;
 }
 
 .languages {
@@ -54,13 +58,14 @@ header{
 }
 
 .registration-button {
-  background-color: #5ac0cd;
+  background-color: #5AC0CD;
 
   width: 160px;
   height: 43px;
   font-weight: 600;
   margin-top: 10px;
  border-color:#5ac0cd ;
+ margin-left: 6%;
 }
 .cinema-header-content li {
   position: relative;
@@ -229,17 +234,21 @@ align-items: center;
  
 }
 .festival-header {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
+
   font-weight: 600;
   font-size: 48px;
-  top: -25px;
+  top: -65px;
 position: relative;
   
 }
-.festival-text {
-  font-family: "Poppins", serif;
+.festival-header-text {
+font-family: "Poppins", sans-serif;
+
   color: #727272;
   font-size: 22px;
+margin-top: -50px;
+display: inline-block;
  
 }
 .festival-content {
@@ -252,11 +261,17 @@ position: relative;
   gap: 80px;
   align-items: center;
   justify-content: center;
+  margin-top: 3vw;
+  margin-left: -3vw;
 }
 .festival {
   display: flex;
-  gap: 40px;
   margin-left: 140px;
+  position: relative;
+  margin-top: 2vw;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1%;
 }
 .festival-image {
   width: 230px;
@@ -315,14 +330,16 @@ position: relative;
   padding: 10px;
 }
 .black-title{
-font-family: "Poppins", serif;
+font-family: "Poppins", sans-serif;
+
 font-weight: 600;
 font-size: 90px;
 color: #3A3A3A;
 line-height: 90%;
 }
 .black-text{
-font-family: "Poppins", serif;
+font-family: "Poppins", sans-serif;
+
 font-size: 15px;
 line-height: 25px;
 margin-top: 20px;
@@ -346,8 +363,9 @@ margin-top: 20px;
 }
 .category-text{
   transform: rotate(-90deg);
-  /* background-color:#F6F6F6; */
-  font-family: "Poppins",serif;
+
+font-family: "Poppins", sans-serif;
+
   font-style: "ExtraLight";
   font-size: 10px;
 }
@@ -428,14 +446,17 @@ margin-top: 20px;
   font-weight: bold;
   text-align: center;
   /* padding-left: 10px; */
-  font-family: "Poppins",serif;
+ font-family: "Poppins", sans-serif;
+
 }
 .day-cell{
-   font-family: "Poppins",serif;
+ font-family: "Poppins", sans-serif;
+
   
 }
 .event-cell.highlight{
-  font-family: "Poppins",serif;
+font-family: "Poppins", sans-serif;
+
 }
 thead th {
   background-color: white !important;
@@ -448,10 +469,9 @@ thead th {
   display: flex; 
   width: 300px;
   height: 300px;
-margin-top: 300px;
+  margin-top: 300px;
   margin-left:200px ;
-  
-  
+   
 }
 .photoShoot img {
   margin-right: -25px;
@@ -460,36 +480,35 @@ margin-top: 300px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-left: 6vw;
 }
 .mekan-container{
   margin-top: 15%;
 }
 .title{
-  font-size: 150px;
-font-weight: lighter;
- font-family: 'Roboto', sans-serif;
-
-
+  font-size: 120px;
+  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
 }
-
 .description {
-  margin-right: 50px;
+  margin-right: 19vw;
   margin-top: 2%;
   font-family: "Epilogue" ,sans-serif;
   line-height: 30px
 }
 
 .subtitle {
- margin-left: 5px;
+ margin-left: 6vw;
  color: #949494;
- font-size: 26px;
- line-height: 30px;
+ font-size: 23px;
+ line-height: 23px;
+
 }
 .mekan-content{
 display: flex;
   gap: 50px;
-
- margin-top: 60px;
+margin-left: -12vw;
+ margin-top: 40px;
  justify-content: center;
  align-items:center ;
 }
